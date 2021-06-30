@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AddRecipe from './AddRecipe';
+import AddMeal from './AddMeal';
 var destination = document.querySelector('#container');
 
 ReactDOM.render(
     <div>
-        <AddRecipe />
+        <AddMeal />
     </div>,
     destination
 );

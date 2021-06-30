@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Recipes from './Recipes';
+import Meals from './Meals';
+import './index.css';
 
-class AddRecipe extends Component {
+class AddMeal extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,18 +14,18 @@ class AddRecipe extends Component {
 
     addItem(e) {
         if (this._inputElement.value !== "") {
-          var newItem = {
-            text: this._inputElement.value,
-            key: Date.now()
-          };
-       
-          this.setState((prevState) => {
-            return { 
-              items: prevState.items.concat(newItem) 
+            var newItem = {
+                text: this._inputElement.value,
+                key: Date.now()
             };
-          });
+       
+            this.setState((prevState) => {
+                return { 
+                    items: prevState.items.concat(newItem) 
+                };
+            });
          
-          this._inputElement.value = "";
+            this._inputElement.value = "";
         }
          
         console.log(this.state.items);
@@ -34,17 +35,17 @@ class AddRecipe extends Component {
 
     render() {
         return (
-            <div className="AddRecipe">
+            <div className="AddMeal">
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input ref={(a) => this._inputElement = a} placeholder="enter recipe"></input>
+                        <input ref={(a) => this._inputElement = a} placeholder="Add a Meal"></input>
                         <button type="submit">+</button>
                     </form>
                 </div>
-                <Recipes entries={this.state.items}/>
+                <Meals entries={this.state.items}/>
             </div>
         );
     }
 }
 
-export default AddRecipe
+export default AddMeal
