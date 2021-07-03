@@ -12,8 +12,16 @@ class ReportArea extends Component {
 
     handleReportCheckboxChange(e, meal) {
         this.setState((prevState) => {
+            let checkedMeals = prevState.checkedMeals
+
+            if (checkedMeals.indexOf(meal) === -1) {
+                checkedMeals = checkedMeals.concat(meal)
+            } else {
+                checkedMeals.splice(checkedMeals.indexOf(meal), 1)
+            }
+            
             return { 
-                checkedMeals: prevState.checkedMeals.concat(meal) 
+                checkedMeals: checkedMeals
             };
         });
     }
@@ -22,12 +30,7 @@ class ReportArea extends Component {
         let result = []
 
         for (let meal in this.state.checkedMeals) {
-            if (result.indexOf(meal) === -1) {
-                result = result.concat(this.state.checkedMeals[meal].ingredients)
-            } else {
-                result.splice(result.indexOf(meal), 1)
-            }
-            
+            result = result.concat(this.state.checkedMeals[meal].ingredients)
         }
 
         result.sort()

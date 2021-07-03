@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './AddMeal.css'
+import styles from './AddMeal.module.css';
 
 class AddMeal extends Component {
     constructor(props) {
@@ -7,6 +7,7 @@ class AddMeal extends Component {
         this.state = {mealName: ''};
         this.handleChange = this.handleChange.bind(this);
         this.addMeal = this.addMeal.bind(this);
+        this.inputRef = React.createRef();
     }
 
     handleChange(event) {
@@ -16,13 +17,14 @@ class AddMeal extends Component {
     addMeal(event) {
         event.preventDefault();
         this.props.onClick(this.state.mealName);
+        this.inputRef.current.value = "";
     }
 
     render() {
         return (
             <div className="AddMeal">
                 <form onSubmit={this.addMeal}>
-                    <input className="form-control" type="text" value={this.state.mealName} onChange={this.handleChange} placeholder="Add a Meal"></input>
+                    <input className="form-control" ref={this.inputRef} type="text" onChange={this.handleChange} placeholder="Add a Meal"></input>
                     <button className="btn btn-success" type="submit">+</button>
                 </form>
             </div>

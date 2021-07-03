@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './IngredientForm.css';
+import styles from './IngredientForm.module.css';
 
 export default class IngredientForm extends React.Component {
 

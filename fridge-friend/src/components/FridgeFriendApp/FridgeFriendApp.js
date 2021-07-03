@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MealList from '../MealList/MealList';
 import AddMeal from '../AddMeal/AddMeal'
 import ReportArea from '../ReportArea/ReportArea';
-import './FridgeFriendApp.css'
+import styles from './FridgeFriendApp.module.css';
 
 class FridgeFriendApp extends Component {
     constructor(props) {
@@ -23,11 +23,26 @@ class FridgeFriendApp extends Component {
         });
     }
 
+    deleteMeal(meal) {
+        this.setState((prevState) => {
+            let updatedMeals = prevState.meals
+
+            if (prevState.meals.indexOf(meal) !== -1) {
+                updatedMeals.splice(meal, 1)
+            }
+        
+            return {
+                meals: updatedMeals
+            }
+        })
+    }
+
     render() {
         return (
             <div>
                 <h1>Fridge Friend</h1>
-                <MealList meals={this.state.meals} />
+                <MealList meals={this.state.meals}
+                    deleteMeal={(meal) => this.deleteMeal(meal)} />
                 <AddMeal onClick={this.addItem} />
 
                 <br />
