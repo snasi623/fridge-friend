@@ -3,3 +3,8 @@ As a consumer on a diet, I want an app that will help me plan my meals in advanc
 As a habitual saver, I want an app that will help me keep track of what is in my fridge so that I can avoid purchasing the same item twice if I am at the store and forget if I have an ingredient.
 
 As a consumer who hates waste, I want to an app that will remind me what food is in my fridge so that I can plan meals that will incorporate that item before it goes bad.
+
+TODO
+
+-Add Ingredient button triggers ingredient form
+-add ingredients using form

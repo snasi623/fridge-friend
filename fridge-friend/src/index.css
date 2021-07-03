@@ -1,13 +1,17 @@
 body {
     padding: 50px;
-    background-color: rgb(178, 250, 250);
+    background-image: url(./Images/fridge-texture.jpeg);
     font-family: sans-serif;
+    background-size: cover;
 }
 #container {
     display: flex;
     justify-content: flex;
 }
-.MealList {
-    color: white;
-    background: powderblue;
+
+.checkbox-no-break {
+    white-space: nowrap
+}
+li {
+    list-style-type: none;
 }

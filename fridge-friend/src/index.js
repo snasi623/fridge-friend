@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AddMeal from './AddMeal';
+import FridgeFriendApp from './components/FridgeFriendApp/FridgeFriendApp';
 var destination = document.querySelector('#container');
 
-ReactDOM.render(
-    <div>
-        <AddMeal />
-    </div>,
-    destination
-);
+ReactDOM.render(<FridgeFriendApp/>, destination);

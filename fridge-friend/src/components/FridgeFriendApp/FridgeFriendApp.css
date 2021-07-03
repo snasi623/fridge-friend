@@ -1,0 +1,10 @@
+h1 {
+    color: white;
+    background: #343a40;
+    padding: 10px;
+    text-shadow: 2px 2px rgb(68, 68, 68);
+    text-align: center;
+}
+ul {
+    padding: 0;
+}
