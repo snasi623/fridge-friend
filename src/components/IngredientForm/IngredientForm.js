@@ -59,27 +59,31 @@ export default class IngredientForm extends React.Component {
 
     render() {
         return (
-            <div>  
-                <ul>
-                    {this.state.items.map((item) => 
-                        <li key={item}>{item} 
-                            <button onClick={() => this.deleteIngredient(item)}>Delete</button>
-                        </li>
-                    )}
-                </ul>
-                <form onSubmit={this.handleAddIngredient}>
-                    <input 
-                        ref={this.inputRef}
-                        onChange={this.handleNewIngredientNameChange}
-                        placeholder="Add Ingredient" 
-                        className="ingredient form-control" />
-                    
-                    <button className="btn btn-success" type="submit">+</button>
-                </form>
-                <br />
-                <form onSubmit={this.handleSave}>
-                    <button className="btn btn-sm btn-primary" type="submit" title="Save"><i className="fas fa-save fa-fw"></i></button>
-                </form>
+            <div className={styles.IngredientForm}>  
+                <div className="row">
+                    <div className="col-sm-6">
+                        <ul>
+                        {this.state.items.map((item) => 
+                            <li key={item}>{item} 
+                                <button className="btn btn-sm btn-danger" onClick={() => this.deleteIngredient(item)}>Delete</button>
+                            </li>)}
+                        </ul>
+                    </div>
+                    <div className="col-sm-6">
+                        <form onSubmit={this.handleAddIngredient}>
+                            <input 
+                                ref={this.inputRef}
+                                onChange={this.handleNewIngredientNameChange}
+                                placeholder="Add Ingredient" 
+                                className="ingredient form-control" />
+                            
+                            <button className="btn btn-success" type="submit">+</button>
+                        </form>
+                        <form onSubmit={this.handleSave}>
+                            <button className="btn btn-sm btn-primary" type="submit" title="Save"><i className="fas fa-save fa-fw"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

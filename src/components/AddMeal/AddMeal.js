@@ -22,7 +22,7 @@ class AddMeal extends Component {
 
     render() {
         return (
-            <div className="AddMeal">
+            <div className={styles.FridgeFriendApp}>
                 <form onSubmit={this.addMeal}>
                     <input className="form-control" ref={this.inputRef} type="text" onChange={this.handleChange} placeholder="Add a Meal"></input>
                     <button className="btn btn-success" type="submit">+</button>

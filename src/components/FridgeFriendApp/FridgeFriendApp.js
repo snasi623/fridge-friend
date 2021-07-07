@@ -39,7 +39,7 @@ class FridgeFriendApp extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.FridgeFriendApp}>
                 <h1>Fridge Friend</h1>
                 <MealList meals={this.state.meals}
                     deleteMeal={(meal) => this.deleteMeal(meal)} />

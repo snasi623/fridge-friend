@@ -9,7 +9,7 @@ class MealList extends Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.MealList}>
                 {this.props.meals.map((meal, index) => 
                     <Meal key={index} meal={meal} deleteFunction={() => this.props.deleteMeal(meal)} />
                 )}

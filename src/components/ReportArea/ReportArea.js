@@ -41,7 +41,7 @@ class ReportArea extends Component {
     render() {
         return (
             <div>
-                <h1>Report Area</h1>
+                <h1>Grocery List</h1>
                 <h2>Check what you want to eat this week</h2>
                 <form> 
                     {this.props.meals.map((meal, index) => (
@@ -61,9 +61,9 @@ class ReportArea extends Component {
                 <div className="card card-default">
                     <div className="card-header">My Groceries</div>
                     <div className="card-body">
-                    {this.getUniqueListOfIngredients().map((ingredient, index) => (
-                        <p key={index}>{ingredient}</p>
-                    ))}
+                        {this.getUniqueListOfIngredients().map((ingredient, index) => (
+                            <p key={index}>{ingredient}</p>
+                        ))}
                     </div>
                 </div>
             </div>
